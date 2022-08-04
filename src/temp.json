@@ -1,0 +1,388 @@
+[
+    {
+        "id": 2629559,
+        "occurrence": 0,
+        "final_mark": null,
+        "status": "in_progress",
+        "validated?": null,
+        "current_team_id": 4188666,
+        "project": {
+            "id": 1323,
+            "name": "Exam Rank 05",
+            "slug": "exam-rank-05",
+            "parent_id": null
+        },
+        "cursus_ids": [
+            21
+        ],
+        "marked_at": null,
+        "marked": false,
+        "retriable_at": null,
+        "created_at": "2022-06-21T11:01:22.411Z",
+        "updated_at": "2022-06-21T11:01:22.411Z",
+        "user": {
+            "id": 93216,
+            "email": "mpatel@student.42abudhabi.ae",
+            "login": "mpatel",
+            "first_name": "Mohammed",
+            "last_name": "Patel",
+            "usual_full_name": "Mohammed Patel",
+            "usual_first_name": null,
+            "url": "https://api.intra.42.fr/v2/users/mpatel",
+            "phone": "hidden",
+            "displayname": "Mohammed Patel",
+            "image_url": "https://cdn.intra.42.fr/users/mpatel.jpg",
+            "new_image_url": "https://profile.intra.42.fr/users/mpatel/photo",
+            "staff?": false,
+            "correction_point": 5,
+            "pool_month": "august",
+            "pool_year": "2021",
+            "location": null,
+            "wallet": 145,
+            "anonymize_date": "2025-08-02T00:00:00.000+04:00",
+            "data_erasure_date": "2025-08-02T00:00:00.000+04:00",
+            "created_at": "2021-07-13T10:02:58.895Z",
+            "updated_at": "2022-08-02T17:48:45.434Z",
+            "alumnized_at": null,
+            "alumni?": false
+        },
+        "teams": [
+            {
+                "id": 4188666,
+                "name": "mpatel's group",
+                "url": "https://api.intra.42.fr/v2/teams/4188666",
+                "final_mark": null,
+                "project_id": 1323,
+                "created_at": "2022-06-21T11:01:22.453Z",
+                "updated_at": "2022-06-21T11:01:22.508Z",
+                "status": "in_progress",
+                "terminating_at": null,
+                "users": [
+                    {
+                        "id": 93216,
+                        "login": "mpatel",
+                        "url": "https://api.intra.42.fr/v2/users/mpatel",
+                        "leader": true,
+                        "occurrence": 0,
+                        "validated": true,
+                        "projects_user_id": 2629559
+                    }
+                ],
+                "locked?": true,
+                "validated?": null,
+                "closed?": false,
+                "repo_url": null,
+                "repo_uuid": "intra-uuid-c2a02736-1afb-4f95-bf5b-06857cbd120a-4188666-mpatel",
+                "locked_at": "2022-06-21T11:01:22.480Z",
+                "closed_at": null,
+                "project_session_id": 3309,
+                "project_gitlab_path": null
+            }
+        ]
+    },
+    {
+        "id": 2674048,
+        "occurrence": 2,
+        "final_mark": 66,
+        "status": "in_progress",
+        "validated?": false,
+        "current_team_id": 4296488,
+        "project": {
+            "id": 1323,
+            "name": "Exam Rank 05",
+            "slug": "exam-rank-05",
+            "parent_id": null
+        },
+        "cursus_ids": [
+            21
+        ],
+        "marked_at": "2022-07-28T10:23:59.102Z",
+        "marked": true,
+        "retriable_at": "2022-07-28T10:23:59.138Z",
+        "created_at": "2022-07-19T05:19:52.033Z",
+        "updated_at": "2022-08-03T22:45:51.878Z",
+        "user": {
+            "id": 88405,
+            "email": "bnaji@student.42abudhabi.ae",
+            "login": "bnaji",
+            "first_name": "Bassam",
+            "last_name": "Naji",
+            "usual_full_name": "Bassam Naji",
+            "usual_first_name": null,
+            "url": "https://api.intra.42.fr/v2/users/bnaji",
+            "phone": "hidden",
+            "displayname": "Bassam Naji",
+            "image_url": "https://cdn.intra.42.fr/users/bnaji.jpg",
+            "new_image_url": "https://profile.intra.42.fr/users/bnaji/photo",
+            "staff?": false,
+            "correction_point": 12,
+            "pool_month": "may",
+            "pool_year": "2021",
+            "location": "lab1r2s3",
+            "wallet": 150,
+            "anonymize_date": "2025-08-03T00:00:00.000+04:00",
+            "data_erasure_date": "2025-08-03T00:00:00.000+04:00",
+            "created_at": "2021-05-02T18:34:05.652Z",
+            "updated_at": "2022-08-03T16:05:02.312Z",
+            "alumnized_at": null,
+            "alumni?": false
+        },
+        "teams": [
+            {
+                "id": 4248860,
+                "name": "bnaji's group",
+                "url": "https://api.intra.42.fr/v2/teams/4248860",
+                "final_mark": 33,
+                "project_id": 1323,
+                "created_at": "2022-07-19T05:19:52.085Z",
+                "updated_at": "2022-07-21T11:29:53.026Z",
+                "status": "finished",
+                "terminating_at": null,
+                "users": [
+                    {
+                        "id": 88405,
+                        "login": "bnaji",
+                        "url": "https://api.intra.42.fr/v2/users/bnaji",
+                        "leader": true,
+                        "occurrence": 0,
+                        "validated": true,
+                        "projects_user_id": 2674048
+                    }
+                ],
+                "locked?": true,
+                "validated?": false,
+                "closed?": true,
+                "repo_url": null,
+                "repo_uuid": "intra-uuid-22f3fa62-8573-48a4-930e-5de65e75927a-4248860-bnaji",
+                "locked_at": "2022-07-19T05:19:52.115Z",
+                "closed_at": "2022-07-21T11:29:52.434Z",
+                "project_session_id": 3309,
+                "project_gitlab_path": null
+            },
+            {
+                "id": 4278929,
+                "name": "bnaji's group-1",
+                "url": "https://api.intra.42.fr/v2/teams/4278929",
+                "final_mark": 66,
+                "project_id": 1323,
+                "created_at": "2022-07-28T05:21:12.859Z",
+                "updated_at": "2022-07-28T11:57:49.459Z",
+                "status": "finished",
+                "terminating_at": null,
+                "users": [
+                    {
+                        "id": 88405,
+                        "login": "bnaji",
+                        "url": "https://api.intra.42.fr/v2/users/bnaji",
+                        "leader": true,
+                        "occurrence": 1,
+                        "validated": true,
+                        "projects_user_id": 2674048
+                    }
+                ],
+                "locked?": true,
+                "validated?": false,
+                "closed?": true,
+                "repo_url": null,
+                "repo_uuid": "intra-uuid-db880d34-2cd7-4eea-8b14-cddfec92fd4d-4278929-bnaji",
+                "locked_at": "2022-07-28T05:21:12.899Z",
+                "closed_at": "2022-07-28T11:57:47.487Z",
+                "project_session_id": 3309,
+                "project_gitlab_path": null
+            },
+            {
+                "id": 4296488,
+                "name": "bnaji's group-2",
+                "url": "https://api.intra.42.fr/v2/teams/4296488",
+                "final_mark": null,
+                "project_id": 1323,
+                "created_at": "2022-08-03T22:45:51.903Z",
+                "updated_at": "2022-08-03T22:45:51.974Z",
+                "status": "in_progress",
+                "terminating_at": null,
+                "users": [
+                    {
+                        "id": 88405,
+                        "login": "bnaji",
+                        "url": "https://api.intra.42.fr/v2/users/bnaji",
+                        "leader": true,
+                        "occurrence": 2,
+                        "validated": true,
+                        "projects_user_id": 2674048
+                    }
+                ],
+                "locked?": true,
+                "validated?": null,
+                "closed?": false,
+                "repo_url": null,
+                "repo_uuid": "intra-uuid-f97cbc61-efad-4afb-8f76-5547a48e4fd3-4296488-bnaji",
+                "locked_at": "2022-08-03T22:45:51.929Z",
+                "closed_at": null,
+                "project_session_id": 3309,
+                "project_gitlab_path": null
+            }
+        ]
+    },
+    {
+        "id": 2683801,
+        "occurrence": 0,
+        "final_mark": null,
+        "status": "in_progress",
+        "validated?": null,
+        "current_team_id": 4262020,
+        "project": {
+            "id": 1323,
+            "name": "Exam Rank 05",
+            "slug": "exam-rank-05",
+            "parent_id": null
+        },
+        "cursus_ids": [
+            21
+        ],
+        "marked_at": null,
+        "marked": false,
+        "retriable_at": null,
+        "created_at": "2022-07-22T09:15:24.671Z",
+        "updated_at": "2022-07-22T09:15:24.915Z",
+        "user": {
+            "id": 90067,
+            "email": "aalsuwai@student.42abudhabi.ae",
+            "login": "aalsuwai",
+            "first_name": "Alia",
+            "last_name": "Alsuwaidi",
+            "usual_full_name": "Alia Alsuwaidi",
+            "usual_first_name": null,
+            "url": "https://api.intra.42.fr/v2/users/aalsuwai",
+            "phone": "hidden",
+            "displayname": "Alia Alsuwaidi",
+            "image_url": "https://cdn.intra.42.fr/users/aalsuwai.jpg",
+            "new_image_url": "https://profile.intra.42.fr/users/aalsuwai/photo",
+            "staff?": false,
+            "correction_point": 1,
+            "pool_month": "july",
+            "pool_year": "2021",
+            "location": null,
+            "wallet": 150,
+            "anonymize_date": "2025-08-03T00:00:00.000+04:00",
+            "data_erasure_date": "2025-08-03T00:00:00.000+04:00",
+            "created_at": "2021-06-08T11:29:22.516Z",
+            "updated_at": "2022-08-03T12:03:02.845Z",
+            "alumnized_at": null,
+            "alumni?": false
+        },
+        "teams": [
+            {
+                "id": 4262020,
+                "name": "aalsuwai's group",
+                "url": "https://api.intra.42.fr/v2/teams/4262020",
+                "final_mark": null,
+                "project_id": 1323,
+                "created_at": "2022-07-22T09:15:24.717Z",
+                "updated_at": "2022-07-22T09:15:24.893Z",
+                "status": "in_progress",
+                "terminating_at": null,
+                "users": [
+                    {
+                        "id": 90067,
+                        "login": "aalsuwai",
+                        "url": "https://api.intra.42.fr/v2/users/aalsuwai",
+                        "leader": true,
+                        "occurrence": 0,
+                        "validated": true,
+                        "projects_user_id": 2683801
+                    }
+                ],
+                "locked?": true,
+                "validated?": null,
+                "closed?": false,
+                "repo_url": null,
+                "repo_uuid": "intra-uuid-fee8b608-d939-4be0-87f0-dea0b08a6efc-4262020-aalsuwai",
+                "locked_at": "2022-07-22T09:15:24.796Z",
+                "closed_at": null,
+                "project_session_id": 3309,
+                "project_gitlab_path": null
+            }
+        ]
+    },
+    {
+        "id": 2705420,
+        "occurrence": 0,
+        "final_mark": null,
+        "status": "in_progress",
+        "validated?": null,
+        "current_team_id": 4296551,
+        "project": {
+            "id": 1323,
+            "name": "Exam Rank 05",
+            "slug": "exam-rank-05",
+            "parent_id": null
+        },
+        "cursus_ids": [
+            21
+        ],
+        "marked_at": null,
+        "marked": false,
+        "retriable_at": null,
+        "created_at": "2022-08-03T23:56:43.188Z",
+        "updated_at": "2022-08-03T23:56:43.188Z",
+        "user": {
+            "id": 88384,
+            "email": "ahhammou@student.42abudhabi.ae",
+            "login": "ahhammou",
+            "first_name": "Ahmad",
+            "last_name": "Hammoudeh",
+            "usual_full_name": "Ahmad Hammoudeh",
+            "usual_first_name": null,
+            "url": "https://api.intra.42.fr/v2/users/ahhammou",
+            "phone": "hidden",
+            "displayname": "Ahmad Hammoudeh",
+            "image_url": "https://cdn.intra.42.fr/users/ahhammou.jpg",
+            "new_image_url": "https://profile.intra.42.fr/users/ahhammou/photo",
+            "staff?": false,
+            "correction_point": 12,
+            "pool_month": "may",
+            "pool_year": "2021",
+            "location": "lab1r1s9",
+            "wallet": 145,
+            "anonymize_date": "2025-08-04T00:00:00.000+04:00",
+            "data_erasure_date": "2025-08-04T00:00:00.000+04:00",
+            "created_at": "2021-05-02T17:35:37.390Z",
+            "updated_at": "2022-08-03T22:41:43.855Z",
+            "alumnized_at": null,
+            "alumni?": false
+        },
+        "teams": [
+            {
+                "id": 4296551,
+                "name": "ahhammou's group",
+                "url": "https://api.intra.42.fr/v2/teams/4296551",
+                "final_mark": null,
+                "project_id": 1323,
+                "created_at": "2022-08-03T23:56:43.231Z",
+                "updated_at": "2022-08-03T23:56:43.281Z",
+                "status": "in_progress",
+                "terminating_at": null,
+                "users": [
+                    {
+                        "id": 88384,
+                        "login": "ahhammou",
+                        "url": "https://api.intra.42.fr/v2/users/ahhammou",
+                        "leader": true,
+                        "occurrence": 0,
+                        "validated": true,
+                        "projects_user_id": 2705420
+                    }
+                ],
+                "locked?": true,
+                "validated?": null,
+                "closed?": false,
+                "repo_url": null,
+                "repo_uuid": "intra-uuid-8fece08e-0c93-4ccc-8a03-f6cde09f9e7f-4296551-ahhammou",
+                "locked_at": "2022-08-03T23:56:43.255Z",
+                "closed_at": null,
+                "project_session_id": 3309,
+                "project_gitlab_path": null
+            }
+        ]
+    }
+]
