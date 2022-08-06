@@ -4,6 +4,7 @@
 import requests
 import sys
 import os
+import csv
 import pandas as pd
 from dotenv import load_dotenv
 from utils import get_user_id
@@ -31,7 +32,7 @@ def get_token():
     }
     response = requests.post('https://api.intra.42.fr/oauth/token', data=data)
     token = bytetodict(response.content)
-    print(token)
+    # print(token)
     return token['access_token']
 
 
@@ -57,7 +58,7 @@ def check_where_exam(headers):
     # print(temp[0]['location'])
     Lab = []
     for x in temp[0]['location']:
-        print(x)
+        # print(x)
         if (x == '1'):
             Lab.append(1)
         if (x == '2'):
@@ -387,7 +388,7 @@ def exam_search(i, headers,students, studentnames):
     temp = response.json()
     temp1 = response.json()
     while (bool(temp1)):
-        print(i)
+        # print(i)
         j+=1
         endpoint = '/projects/%s/projects_users?filter[status]=in_progress&filter[campus]=43&page=%i' % ((1319 + i), (j))
         url = url_join(endpoint)
@@ -399,7 +400,7 @@ def exam_search(i, headers,students, studentnames):
        json.dump(temp, write_file, indent=4)
     with open("data_file2.json", "r") as read_file:
        decoded_hand = json.load(read_file)
-    print('This is exam number %s' % (i + 2))
+    # print('This is exam number %s' % (i + 2))
     for x in decoded_hand:
         if (user_in_abuDhabi(x['user']['login'], headers)):
             if (x['status'] == 'in_progress' and x['validated?'] != True):
@@ -412,23 +413,23 @@ def randomize_students(students, lab, studentnames,headers):
     for x in lab:
         if (x == 1 and carry_over):
             carry_over = lab_one_strategy(students,studentnames,headers)
-            print('Lab 1')
+            # print('Lab 1')
         if (x == 3 and carry_over):
             carry_over = lab_three_strategy(students,studentnames,headers)
-            print('Lab 3')
+            # print('Lab 3')
         if (x == 2 and carry_over):
             carry_over = lab_two_strategy(students,studentnames,headers)
-            print('Lab 2')
+            # print('Lab 2')
     for x in lab:
         if (x == 1 and carry_over):
             carry_over = lab_one_carryover_strategy(students,studentnames,headers)
-            print('Lab 1')
+            # print('Lab 1')
         if (x == 3 and carry_over):
             carry_over = lab_three_carryover_trategy(students,studentnames,headers)
-            print('Lab 3')
+            # print('Lab 3')
         if (x == 2 and carry_over):
             carry_over = lab_two_carryover_strategy(students,studentnames,headers)
-            print('Lab 2')
+            # print('Lab 2')
 
 def student_search():
     token = get_token()
@@ -439,7 +440,7 @@ def student_search():
          exam_search(i, headers, students, studentnames)
     lab = check_where_exam(headers)
     randomize_students(students, lab, studentnames, headers)
-    print(studentnames)
+    # print(studentnames)
     return students
 
 
@@ -447,8 +448,20 @@ def student_search():
 
 def main():
     students = student_search()
-    print(students)
-    students = {"marcos@42abudhabi.ae":"lab3r3s12", "hammoudeh.ahmad@hotmail.com":"Lab2"}
+    field_names = ['Assigned Seat']
+    # print(students)
+    # students = {"marcos@42abudhabi.ae":"lab3r3s12", "hammoudeh.ahmad@hotmail.com":"lab3r1s12"}
+    with open('temp.csv', 'w') as f:
+        f.write("%s,%s, %s\n"%("Student","Seat","Checked In"))
+        for key in students.keys():
+            f.write("%s,%s\n"%(key,students[key]))
+    with open('temp.csv') as f:
+        data = sorted(csv.reader(f))
+    with open('SeatingPlan.csv', 'w') as f:
+        csv.writer(f).writerows(data)
+    os.remove('temp.csv')
+
+
     
     # SenderAddress = "42adtestemail@gmail.com"
     # password = "uzpbberomtdewpnv"
