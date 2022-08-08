@@ -448,8 +448,8 @@ def student_search():
 
 def main():
     students = student_search()
-    field_names = ['Assigned Seat']
-    # print(students)
+    # # field_names = ['Assigned Seat']
+    # # print(students)
     # students = {"marcos@42abudhabi.ae":"lab3r3s12", "hammoudeh.ahmad@hotmail.com":"lab3r1s12"}
     with open('temp.csv', 'w') as f:
         f.write("%s,%s, %s\n"%("Student","Seat","Checked In"))
@@ -460,6 +460,7 @@ def main():
     with open('SeatingPlan.csv', 'w') as f:
         csv.writer(f).writerows(data)
     os.remove('temp.csv')
+    os.remove('data_file2.json')
 
 
     
