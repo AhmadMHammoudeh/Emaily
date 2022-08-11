@@ -35,7 +35,6 @@ def user_in_abuDhabi(user_login, headers):
     url = url_join(endpoint)
     response = requests.get(url, headers=headers)
     temp = response.json()
-    # print(json.dumps(temp, indent=4))
     if temp['campus'][0]['id'] == 43:
         return True
 
@@ -46,7 +45,6 @@ def check_where_exam(headers):
     temp = response.json()
     Lab = []
     for x in temp[0]['location']:
-        # print(x)
         if (x == '1'):
             Lab.append(1)
         if (x == '2'):
@@ -54,6 +52,8 @@ def check_where_exam(headers):
         if (x == '3'):
             Lab.append(2)
     return Lab
+
+
 
 
 def lab_one_strategy(students, studentnames, headers):   
@@ -108,6 +108,8 @@ def lab_one_strategy(students, studentnames, headers):
     return num_students - i +1
 
 
+
+
 def lab_two_strategy(students, studentnames, headers):   
     labtwo = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
     labtwocapacity = 32
@@ -159,6 +161,8 @@ def lab_two_strategy(students, studentnames, headers):
             nums -= 1
         i+=1
     return num_students - i +1
+
+
 
         
 def lab_three_strategy(students, studentnames, headers):   
@@ -214,6 +218,8 @@ def lab_three_strategy(students, studentnames, headers):
     return num_students - i +1
 
 
+
+
 # ------------------------------------------------------------------------------------------------
 def lab_one_carryover_strategy(students, studentnames, headers):   
     labone = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
@@ -266,6 +272,8 @@ def lab_one_carryover_strategy(students, studentnames, headers):
         i+=1
     return num_students - i +1
 
+
+
 def lab_two_carryover_strategy(students, studentnames, headers):   
     labtwo = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
     labtwocapacity = 24
@@ -316,6 +324,8 @@ def lab_two_carryover_strategy(students, studentnames, headers):
             nums -= 1
         i+=1
     return num_students - i +1
+
+
         
 def lab_three_carryover_strategy(students, studentnames, headers):   
     labthree = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
@@ -422,7 +432,6 @@ def student_search():
          exam_search(i, headers, students, studentnames)
     lab = check_where_exam(headers)
     randomize_students(students, lab, studentnames, headers)
-    # print(studentnames)
     return students
 
 
