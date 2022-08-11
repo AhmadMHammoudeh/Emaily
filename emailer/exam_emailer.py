@@ -1,6 +1,3 @@
-#!/usr/local/bin/python3
-
-
 import requests
 import sys
 import os
@@ -20,9 +17,6 @@ import json
 import smtplib, ssl
 
 
-
-# Funcao que requere a token, versao em python do cURL disponibilizado pelo API
-# tambem faz o tratamento de dados para retornar somente a token
 def get_token():
     load_dotenv()
     data = {
@@ -32,14 +26,9 @@ def get_token():
     }
     response = requests.post('https://api.intra.42.fr/oauth/token', data=data)
     token = bytetodict(response.content)
-    # print(token)
     return token['access_token']
 
 
-# Grava a token e user_id e define o header que sera enviado na requisicao,
-# analisa erros de input, pega a flag recebida e define o endpoint para
-# requisitar os dados do usuario. Converte a resposta do servidor em DataFrame
-# e manda imprimir.
 
 def user_in_abuDhabi(user_login, headers):
     endpoint = '/users/%s/' % user_login
@@ -55,7 +44,6 @@ def check_where_exam(headers):
     url = url_join(endpoint)
     response = requests.get(url, headers=headers)
     temp = response.json()
-    # print(temp[0]['location'])
     Lab = []
     for x in temp[0]['location']:
         # print(x)
@@ -66,6 +54,7 @@ def check_where_exam(headers):
         if (x == '3'):
             Lab.append(2)
     return Lab
+
 
 def lab_one_strategy(students, studentnames, headers):   
     labone = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
@@ -118,6 +107,7 @@ def lab_one_strategy(students, studentnames, headers):
         i+=1
     return num_students - i +1
 
+
 def lab_two_strategy(students, studentnames, headers):   
     labtwo = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
     labtwocapacity = 32
@@ -169,6 +159,7 @@ def lab_two_strategy(students, studentnames, headers):
             nums -= 1
         i+=1
     return num_students - i +1
+
         
 def lab_three_strategy(students, studentnames, headers):   
     labthree = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
@@ -221,6 +212,7 @@ def lab_three_strategy(students, studentnames, headers):
             nums -= 1
         i+=1
     return num_students - i +1
+
 
 # ------------------------------------------------------------------------------------------------
 def lab_one_carryover_strategy(students, studentnames, headers):   
@@ -380,15 +372,12 @@ def lab_three_carryover_strategy(students, studentnames, headers):
     
 def exam_search(i, headers,students, studentnames):
     j = 1
-    # endpoint = '/campus/%s/exams/' % 43
-    # endpoint = '/users/%s/' % user_id
     endpoint = '/projects/%s/projects_users?filter[status]=in_progress&filter[campus]=43&page[100]&page=%i' % ((1319 + i), (j))
     url = url_join(endpoint)
     response = requests.get(url, headers=headers)
     temp = response.json()
     temp1 = response.json()
     while (bool(temp1)):
-        # print(i)
         j+=1
         endpoint = '/projects/%s/projects_users?filter[status]=in_progress&filter[campus]=43&page=%i' % ((1319 + i), (j))
         url = url_join(endpoint)
@@ -400,7 +389,6 @@ def exam_search(i, headers,students, studentnames):
        json.dump(temp, write_file, indent=4)
     with open("data_file2.json", "r") as read_file:
        decoded_hand = json.load(read_file)
-    # print('This is exam number %s' % (i + 2))
     for x in decoded_hand:
         if (user_in_abuDhabi(x['user']['login'], headers)):
             if (x['status'] == 'in_progress' and x['validated?'] != True):
@@ -413,23 +401,17 @@ def randomize_students(students, lab, studentnames,headers):
     for x in lab:
         if (x == 1 and carry_over):
             carry_over = lab_one_strategy(students,studentnames,headers)
-            # print('Lab 1')
         if (x == 3 and carry_over):
             carry_over = lab_three_strategy(students,studentnames,headers)
-            # print('Lab 3')
         if (x == 2 and carry_over):
             carry_over = lab_two_strategy(students,studentnames,headers)
-            # print('Lab 2')
     for x in lab:
         if (x == 1 and carry_over):
             carry_over = lab_one_carryover_strategy(students,studentnames,headers)
-            # print('Lab 1')
         if (x == 3 and carry_over):
             carry_over = lab_three_carryover_trategy(students,studentnames,headers)
-            # print('Lab 3')
         if (x == 2 and carry_over):
             carry_over = lab_two_carryover_strategy(students,studentnames,headers)
-            # print('Lab 2')
 
 def student_search():
     token = get_token()
@@ -448,9 +430,6 @@ def student_search():
 
 def main():
     students = student_search()
-    # # field_names = ['Assigned Seat']
-    # # print(students)
-    # students = {"marcos@42abudhabi.ae":"lab3r3s12", "hammoudeh.ahmad@hotmail.com":"lab3r1s12"}
     with open('temp.csv', 'w') as f:
         f.write("%s,%s, %s\n"%("Student","Seat","Checked In"))
         for key in students.keys():
@@ -461,22 +440,23 @@ def main():
         csv.writer(f).writerows(data)
     os.remove('temp.csv')
     os.remove('data_file2.json')
+    students = {"ahhammou@student.42abudhabi.ae":"lab3r3s12", "hammoudeh.ahmad@hotmail.com":"lab3r1s12"}
 
 
     
-    # SenderAddress = "42adtestemail@gmail.com"
-    # password = "uzpbberomtdewpnv"
+    SenderAddress = "42adtestemail@gmail.com"
+    password = "uzpbberomtdewpnv"
 
-    # emails = list(students)
-    # server = smtplib.SMTP("smtp.gmail.com", 587)
-    # server.starttls()
-    # server.login(SenderAddress, password)
-    # subject = "EXAM SEATING"
-    # for email in emails:
-    #     msg = "Your Assigned Seats is %s \n" % students[email]
-    #     body = "Subject: {}\n\n{}".format(subject,msg)
-    #     server.sendmail(SenderAddress, email, body)
-    # server.quit()
+    emails = list(students)
+    server = smtplib.SMTP("smtp.gmail.com", 587)
+    server.starttls()
+    server.login(SenderAddress, password)
+    subject = "EXAM SEATING"
+    for email in emails:
+        msg = "Your Assigned Seats is %s \n" % students[email]
+        body = "Subject: {}\n\n{}".format(subject,msg)
+        server.sendmail(SenderAddress, email, body)
+    server.quit()
 
 
 if __name__ == "__main__":
